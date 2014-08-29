@@ -38,4 +38,9 @@ def edit
       render :edit
     end
   end
+    def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to pictures_url
+  end
 end
