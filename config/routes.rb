@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
+  resources :pictures
   root 'pictures#index'
-  get 'pictures' => 'pictures#index'
-  post 'pictures' => 'pictures#create'
-  get 'pictures/new' => 'pictures#new'
-  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
-  patch 'pictures/:id' => "pictures#update"
-  get 'pictures/:id' => 'pictures#show', as: "picture"
+end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -63,4 +58,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
